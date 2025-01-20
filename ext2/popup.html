@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable and Attendance</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Timetable and Attendance Tracker</h1>
+        <button id="addSubject">Add Subject</button>
+        <button id="setTimetable" class="hidden">Set Timetable</button>
+        <div id="timetable"></div>
+
+        <!-- Attendance Popup -->
+        <div id="attendancePopup" class="popup hidden">
+            <button id="closePopup">Close</button>
+            <h2>Attendance Details</h2>
+            <div id="attendanceDetails"></div>
+            <div id="calendar"></div>
+        </div>
+
+        <!-- Set Timetable Popup -->
+        <div id="setTimetablePopup" class="popup hidden">
+            <button id="closeSetTimetablePopup">Close</button>
+            <h2>Set Timetable</h2>
+            <div id="subjectTimeInputs"></div>
+            <button id="confirmTimetable">Confirm Timetable</button>
+        </div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
