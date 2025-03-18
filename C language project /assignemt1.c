@@ -17,3 +17,4 @@ n=n/2;
 printf("\n Equivalent binary number is %ld",sum);
 getchar();
 }
+// this program convert no into binary 
