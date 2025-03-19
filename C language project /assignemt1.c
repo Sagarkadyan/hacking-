@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+// this program convert no into binary 
 
 void main()
 {
