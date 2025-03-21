@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<math.h>
 #include <stdlib.h>
+// sometimes #ivclude<coinio.h> dont work in linux 
 int main()
 {
 int p,n,ch;
