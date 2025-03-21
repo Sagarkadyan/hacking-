@@ -4,6 +4,7 @@
 // sometimes #ivclude<coinio.h> dont work in linux 
 // sometimes clrscr does not work
 //sometimes getch does not work
+// so we use system("clear")and getchar
 int main()
 {
 int p,n,ch;
