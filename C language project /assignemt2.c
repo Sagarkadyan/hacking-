@@ -2,7 +2,8 @@
 #include<math.h>
 #include <stdlib.h>
 // sometimes #ivclude<coinio.h> dont work in linux 
-// sometimes clrscr does not wor
+// sometimes clrscr does not work
+//sometimes getch does not work
 int main()
 {
 int p,n,ch;
