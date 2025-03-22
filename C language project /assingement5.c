@@ -33,5 +33,5 @@ printf("\n Id is : %d \n ",record[i].id);
 printf("\n Name i : %s \n",record[i].name);
 printf("\n Percantage is : %f \n\n",record[i].percentage);;    
 }
-
+// is is wery similar to dict data type in python
 }
