@@ -20,7 +20,7 @@
  else
  printf("\n Division of %d%d is %f",a,b,(float)a/b);
  break;
- case 5 : printf("\n modulus  of %d%%d is %d ",a,b,a%b);
+ case 5: printf("\n modulus  of %d/%d is %d ",a,b,a%b);
  break;
  default: printf("\n Enter correct choice");
  break;
