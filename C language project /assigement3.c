@@ -3,7 +3,7 @@
 void main()
 {
 int ch ,b,h,a,c;
-float r1;
+float r;
 system("clear");
 printf(" Enter the choice:\n1.circle\n2.square\n3.rectangle\n4.triangle\nchoice:");
 scanf("%d",&ch);
