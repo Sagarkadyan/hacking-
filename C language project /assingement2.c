@@ -1,3 +1,12 @@
+/* AIM : To write a C program to calculate the Simple and Compound intrest.
+PROCEDURE 
+STEP1:start the program 
+STEP2:declare the values p,n,ch,r
+STEP3:input the values for p,n,r,ch
+STEP4:get the choice from user weather to calcualte simple or compound intrest 
+STEP5:claculate the print the value of simple intrest  or compound intrest 
+STEP6:stop the program  
+CODING*/
 #include<stdio.h>
 #include<math.h>
 #include <stdlib.h>
@@ -26,3 +35,14 @@ break;
 }
 return 0;
 }
+/* OUTPUT 
+Enter the choice:
+  1. simple intrest
+  2. compound intrest 
+choice:1
+Enter the value of amount ,number of years and Rate of interest:
+100 2 2
+The simple  intrest is =400
+RESULT
+Thus the C program has been written, executed succesfully to calculate the simple interest and compound*/
+  

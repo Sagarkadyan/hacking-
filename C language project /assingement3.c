@@ -1,3 +1,20 @@
+/*
+AIM:To write a C program to find the area and peremeter of circle,triangle,rectangle and square
+PROCEDURE
+STEP1:Start the program execution 
+STEP2:Declare the variable ch,a,b,c,h,r
+STEP3:Get the choice weather the  1.circle  2.square 3.rectangle 4.triangle
+STEP4:If ch=1 read r and compute area  and perimeter of circle 
+STEP5:Print the area and the perimeter of circle
+STEP6:If ch=2 read a and copmute area perimeter of square
+STEP7:Print the  area and perimeter of square
+STEP8:If ch=3 read b,h and compute area and perimeter of reactangle 
+STEP9:Print the area and the perimeter of rectangle
+STEP10:If ch=4 read a,b,c and compute area  and perimeter of triangle
+STEP11:Print the area and perimeter of triangle
+STEP12:Stop the program execution
+CODING
+*/
 #include<stdio.h>
 #include<stdlib.h>
 void main()
@@ -38,3 +55,14 @@ break;
 }    
 getchar;
 }
+/*OUTPUT
+Enter the  choice :
+  1.Circle
+  2.Square
+  3.Rectangle
+  4.Triangle
+Chice 1
+Enter the radius of the circle:2
+Area of ciccle=12.56
+Perimeter of circle=12.56
+*/ 
