@@ -1,4 +1,4 @@
   THIS FILE WILL CONTAIN NOTHING ANF WILL BE REPOASTE TO BUILD GOOD GIT PROFILE 
 git add .
-git commit -m "Updated assignment2.c"
+git commit -m "Updated assignment"
 git push origin main
