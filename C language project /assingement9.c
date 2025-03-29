@@ -14,21 +14,22 @@ STEP7.Stop the program execution
 PROGRAM
 */
 #include<stdio.h>
-void swap1(int*,int*);
-void swap(int,int);
+#include<stdlib.h>
+void swap(int*,int*);
+
 void main()
 {
  int a,b;
  system("clear");
- printf("\nEnter teo numbers:");
+ printf("\nEnter two numbers:");
  scanf("%d%d",&a,&b);
  printf("\nCALL BY VALUE\n");
  printf("\nBefore swaping\n\n a=%d and b=%d",a,b);
- swap1(&a,&b);
+ swap(&a,&b);
  printf("\nAfter swaping\n\n a=%d and b=%d",a,b);
  getchar();
  }
- void swap(int a, int b)
+ void swap(int *a, int *b)
  {
  int t;
  t=*a;

@@ -4,6 +4,7 @@
 struct student
 {
 int id;
+
 char name[30];
 float percentage;    /* data */
 };
@@ -11,6 +12,7 @@ int main()
 
 {
 int i;
+system("clear");
 struct student record[3];
 //ehich defined the three elements ,each of which is a type of 
 //structstudents ,i.e each is an student structure.
