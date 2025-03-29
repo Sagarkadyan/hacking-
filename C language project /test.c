@@ -1,10 +1,19 @@
 #include <stdio.h>
 
 int main() {
-   int sa,da,fa;
-   scanf("%d %d",&sa,&da);
-   fa=sa+da;
-   printf("%d",fa); 
-    // Write code here
+  int sachin[6];
+  //input
+  for (int i = 0; i < 6; i++)
+  {
+     printf("%d elemnts: ",i);
+     scanf("%d",&sachin[i]);
+   }
+   // output
+   for (int i = 0; i < 6; i++)
+   {
+      printf("%d element are : %d  \n",i,sachin[i]);
+   }
+   
+  
    return 0;
-};
+}; 
