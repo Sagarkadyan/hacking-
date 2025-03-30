@@ -1,13 +1,18 @@
 #include<stdio.h>
+#include<string.h>
 int main()
 {
- int num,i;
- i=1;
- scanf("%d",&num);
- num=num*2;
- for ( i = 1; i < num; i++)
- {
-     i+=i;
- }
- printf("%d",i);
-}
+    
+    char str[100];
+    char ch;
+    int count = 0;
+
+        while (1) {
+        scanf("%c", &ch);
+        if (ch == '$') break;  
+        if (ch != ' ') count++; 
+    }
+
+    printf("%d\n", count);
+    return 0;
+}   
