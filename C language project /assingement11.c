@@ -19,10 +19,10 @@ void main()
  {
     fflush(stdin);
 
-    printf("\n Maths Mark...")
-    scanf("%d", &s[i]..maths);
+    printf("\n Maths Mark...");
+    scanf("%d", &s[i].maths);
 
-    printf("\nPhysics Marks...")
+    printf("\nPhysics Marks...");
     scanf("%d",&s[i].phy);
 
     printf("\n Chemistry Mark......");
@@ -36,16 +36,23 @@ for ( i = 0; i < n; i++)
 {
     for ( j = i+1; j < n; j++)
     {
-       if (s[i].cuttoff < s[j].cutoff)
+       if (s[i].cutoff < s[j].cutoff)
        {
            temp=s[i];
            s[i]=s[j];
            s[j]=temp;
        }
+       
         
     }
         
 }
- 
+  printf("\n\n rank name maths physics chemistry cuttoff\n");
+  for ( i = 0; i < n; i++)
+  {
+      s[i].name, s[i].maths, s[i].phy, s[i].chem, s[i].cutoff;
+
+  }
+  getchar();
     
 }
