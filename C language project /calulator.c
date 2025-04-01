@@ -1,3 +1,4 @@
+//this calacular exit ehen you press e 
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -6,6 +7,7 @@ int main()
     float sa, da, fa;
     char operation;
     char input[50];  // Buffer to hold the input
+    
 
     while (1) {   
         // Read the full line of input
