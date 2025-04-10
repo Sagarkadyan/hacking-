@@ -1,1 +1,5 @@
-#"95 years till 120"
+var=int(input())
+if var == 1 :
+    print("T")
+else :
+    print("F")    
