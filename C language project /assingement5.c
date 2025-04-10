@@ -14,7 +14,7 @@ int main()
 int i;
 system("clear");
 struct student record[3];
-//ehich defined the three elements ,each of which is a type of 
+//Which defined the three elements ,each of which is a type of 
 //structstudents ,i.e each is an student structure.
 // .1st  student's record
 record[0].id=1;
