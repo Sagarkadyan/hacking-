@@ -1,13 +1,11 @@
-n1 = float(input())
-n2 = float(input())
-n3 = int(input())
-bill_amount=n1 
+def print_range(start, end, step):
+    # Write your code here
+    pass
 
+# Get input from user
+start = int(input())
+end = int(input())
+step = int(input())
 
-tip_amount = (n2 / 100) * bill_amount
-total_amount = tip_amount + bill_amount
-split = total_amount /n3
-
-print("Bill Split Calculator")
-print(f"Total (including tip): ${total_amount}")
-print(f"Each person pays: ${split}")
+# Call the function
+print_range(start, end, step)
