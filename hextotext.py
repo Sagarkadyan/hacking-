@@ -39,8 +39,18 @@ def square_number():
 n=int(input())
 
 result = square_number()
-print(result)             '''
-def  sigma(n)
-  for i in range(1,n+1,1):
-          i+=i
-                  pass
+print(result)   
+          '''
+b=0 
+i=1         
+def  sigma():
+  while  i <=n:
+          b+=i
+          i+=1
+          
+
+
+n=int(input())
+sigma()
+
+print(b)                  
