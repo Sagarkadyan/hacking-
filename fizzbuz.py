@@ -1,13 +1,23 @@
+i=1
+a=1
 def fizzbuzz(num):
-    if num % 3 == 0 and num % 7 == 0:
-        return "FizzBuzz"
-    elif num % 3 == 0:
-        return "Fizz"
-    elif num % 7 == 0:
-        return "Buzz"
+   for i in  range(1,num+1):
+    if i % 3 == 0 and i  % 7 == 0:
+        print("FizzBuzz")
+        
+    elif i  % 3 == 0:
+        print("Fizz")
+
+    elif i % 7 == 0:
+    
+        print("Buzz")
+    elif '3' in str(i):
+        print("Almost Fizz")
+          
     else:
-        return str(num)
+        
+        print(i)
 
 # Example usage
-number = int(input("Enter a number: "))
-print(fizzbuzz(number))
+num = int(input())
+fizzbuzz(num)
