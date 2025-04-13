@@ -40,7 +40,7 @@ n=int(input())
 
 result = square_number()
 print(result)   
-'''          
+  
 
          
 
@@ -55,9 +55,11 @@ n = int(input())  # Prompt the user for input
 result = sigma()  # Call the sigma function with n
 
 print(result)  # Print the result   
-'''              
+            
 import random 
 random.random()
 choices=[3,4,5,6]
 get=random.choice(choices)
 print(get)'''
+shopping_list=["bread","eggs","milk","butter"]
+print(shopping_list)
