@@ -40,17 +40,24 @@ n=int(input())
 
 result = square_number()
 print(result)   
-          '''
-b=0 
-i=1         
-def  sigma():
-  while  i <=n:
-          b+=i
-          i+=1
-          
+'''          
 
+         
 
-n=int(input())
-sigma()
+def sigma():
+    b = 0  # Initialize b to 0
+    for i in range(1, n + 1):  # Loop from 1 to n (inclusive)
+        b = b + i  # Accumulate the sum
+    return b  # Return the result
 
-print(b)                  
+# Get input from the user
+n = int(input())  # Prompt the user for input
+result = sigma()  # Call the sigma function with n
+
+print(result)  # Print the result   
+'''              
+import random 
+random.random()
+choices=[3,4,5,6]
+get=random.choice(choices)
+print(get)'''
