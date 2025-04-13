@@ -60,6 +60,7 @@ if log_output.strip() == "":
     make_commits(commit_count, reason="Initial")
 else:
     print("🟢 Already committed today.")
+    print("git not updating")
     
     # Random chance to trigger bonus commits
     ''' you can comment this part it is for fun amd extra commit
