@@ -1,3 +1,10 @@
+'''
+keep in ming 
+dont judge spelling
+this is nit cheating 
+do not always follow my code it might delete your whole repo 
+soon this project will in its own repo in in a junk repo 
+'''
 import os
 import subprocess
 import time
@@ -9,7 +16,9 @@ REPO_PATH = "/home/sagar/Documents/hacking-"
 os.chdir(REPO_PATH)
 
 # Wait for internet
-def wait_for_internet(timeout=60):
+''' this function is set to check internet connection if you are unable 
+connect in time no process will be continued'''
+def wait_for_internet(timeout=60):# this is currently 1 minute change it to convinence
     for i in range(timeout):
         try:
             socket.gethostbyname("github.com")
@@ -19,20 +28,20 @@ def wait_for_internet(timeout=60):
     return False
 
 if not wait_for_internet():
-    print("❌ Internet not available. Skipping auto commit.")
+    print(" Internet not available. Skipping auto commit.")
     exit()
 
 # Remove lock file if it exists
 lock_path = os.path.join(REPO_PATH, ".git", "index.lock")
 if os.path.exists(lock_path):
     os.remove(lock_path)
-    print("🔓 Removed old Git lock file.")
+    print("Removed old Git lock file.")
 
 # Check for today's commit
 log_output = subprocess.getoutput("git log --since=midnight --pretty=oneline")
 
 def make_commits(count, reason="Auto"):
-    print(f"🔁 Making {count} {reason} commits...")
+    print(f" Making {count} {reason} commits...")
 
     for i in range(count):
         with open("autocommit_log.txt", "a") as f:
@@ -43,7 +52,7 @@ def make_commits(count, reason="Auto"):
         time.sleep(random.randint(2, 5))  # Random delay between commits
 
     subprocess.call(["git", "push"])
-    print("✅ All commits pushed!")
+    print(" All commits pushed!")
 
 # Logic
 if log_output.strip() == "":
@@ -53,6 +62,8 @@ else:
     print("🟢 Already committed today.")
     
     # Random chance to trigger bonus commits
+    ''' you can comment this part it is for fun amd extra commit
+    ''' 
     bonus_count = random.randint(1, 3)
-    print(f"🎲 Triggering bonus: making {bonus_count} extra commits!")
+    print(f"Triggering bonus: making {bonus_count} extra commits!")
     make_commits(bonus_count, reason="Bonus")
