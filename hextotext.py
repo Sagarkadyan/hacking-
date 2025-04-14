@@ -94,21 +94,4 @@ lst=delimiter.join(lst)
 
 
 print(lst)'''
-lst = input().split(",")
-ls=[]
-a=len(lst)
-if  a==1:
-     ls.append(lst[0])  
-     print(ls) 
-elif a%2==0:
-  b=a//2
-  ls.append(lst[b-1])
-  ls.append(lst[b])
-  print(ls)
-else:
-  b=a//2
-  ls.append(lst[b-1])
-  ls.append(lst[b])
-  ls.append(lst[b+1])
-  
-  print(ls)     
+
