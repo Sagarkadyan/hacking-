@@ -48,7 +48,7 @@ def make_commits(count, reason="Auto"):
             f.write(f"{reason} commit {i+1} on {datetime.now().isoformat()}\n")
 
         subprocess.call(["git", "add", "."])
-        subprocess.call(["git", "commit", "-m", f"{reason} commit {i+1} 🚀"])
+        subprocess.call(["git", "commit", "-m", f"{reason} commit {i+1} "])
         time.sleep(random.randint(2, 5))  # Random delay between commits
 
     subprocess.call(["git", "push"])
@@ -56,7 +56,7 @@ def make_commits(count, reason="Auto"):
 
 # Logic
 if log_output.strip() == "":
-    commit_count = random.randint(1, 5)
+    commit_count = random.randint(1, 2)
     make_commits(commit_count, reason="Initial")
 else:
     print("🟢 Already committed today.")
@@ -65,6 +65,6 @@ else:
     # Random chance to trigger bonus commits
     ''' you can comment this part it is for fun amd extra commit
     ''' 
-    bonus_count = random.randint(1, 3)
+    bonus_count = random.randint(1, 2)
     print(f"Triggering bonus: making {bonus_count} extra commits!")
     make_commits(bonus_count, reason="Bonus")

@@ -60,6 +60,12 @@ import random
 random.random()
 choices=[3,4,5,6]
 get=random.choice(choices)
-print(get)'''
+print(get)
 shopping_list=["bread","eggs","milk","butter"]
-print(shopping_list)
+print(shopping_list)'''
+lst=["fdfddcd","greg","rrrdcdr","dvd"]
+a=[]
+for i in range(0,len(lst)):
+     
+       a[i]=len(lst[i])
+print(a)       
