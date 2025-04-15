@@ -93,5 +93,89 @@ lst=text.split()
 lst=delimiter.join(lst)
 
 
-print(lst)'''
+print(lst)
+lst = input().split(",")
+b=len(lst)
+b=b//2
+# Write your code below
+lst1=[]
+lst2=[]
+lst3=[]
+lst1=lst[1:len(lst):2]
+lst2=lst[-1::-6]
+lst3=lst[b::2]
+print(lst1)
+print(lst2)
+print(lst3)
 
+print("Welcome to the Daily Expense Tracker!\n")
+print("Menu:")
+print("1. Add a new expense")
+print("2. View all expenses") 
+print("3. Calculate total and average expense")
+print("4. Clear all expenses")
+print("5. Exit")
+expense_list=[]
+a=0
+while True:
+        it=int(input())
+        if it==1:
+            i=float(input())
+           
+            expense_list.append(i)
+            print("Expense added successfully!")
+            
+        elif it==2:
+           if  not expense_list:
+               print("No expenses recorded yet.")
+           else:
+               print("Your expenses:")    
+               for i in range(len(expense_list)):    
+                print(f"{i+1}. {expense_list[i]}")        
+        elif it==3:
+               if  not expense_list:
+                 print("No expenses recorded yet.") 
+               else:
+                 for i in range(len(expense_list)):
+                        a+=expense_list[i]
+                 print("Total expense:",a)
+                 print("Average expense:",a/(len(expense_list)))       
+                          
+        elif it==4:
+              expense_list.clear()
+              
+        elif it==5:
+          print("Exiting the Daily Expense Tracker. Goodbye!")
+          break
+        else:
+                print("Invalid choice. Please try again.")'''
+'''
+n=int(input())
+for i  in range(1,n+2,2):
+        print("*"*i)'''
+prices = input().split(",")
+for i in range(len(prices)):
+    prices[i] = int(prices[i])
+items = input().split(",")
+budget_per_item = int(input())
+
+affordable_items = []
+cant_afford = 0
+total_needed = 0
+
+
+# Write your code below
+for i in range(len(prices)):
+        if prices[i] > budget_per_item :
+                cant_afford+=1
+        else:
+                affordable_items.append(items[i])
+                total_needed+=prices[i]
+
+
+
+
+
+print("Can buy:", affordable_items)
+print("Total budget needed:", total_needed)
+print("Can't afford:", cant_afford)
