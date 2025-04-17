@@ -1,38 +1,17 @@
-import sqlite3
-from datetime import datetime
+import json
+import os
 
-DB_PATH = "storage/codeagent.db"
+HISTORY_FILE = "chat_history.json"
 
-def init_db():
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-            CREATE TABLE IF NOT EXISTS history (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                task_type TEXT,
-                model_name TEXT,
-                user_input TEXT,
-                response TEXT,
-                timestamp TEXT
-            )
-        """)
-        conn.commit()
+def save_history(entry):
+    if not os.path.exists(HISTORY_FILE):
+        with open(HISTORY_FILE, 'w') as f:
+            json.dump([], f)
 
-def log_interaction(task_type, model_name, user_input, response):
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-            INSERT INTO history (task_type, model_name, user_input, response, timestamp)
-            VALUES (?, ?, ?, ?, ?)
-        """, (task_type, model_name, user_input, response, datetime.now().isoformat()))
-        conn.commit()
+    with open(HISTORY_FILE, 'r') as f:
+        history = json.load(f)
 
-def get_history(limit=10):
-    with sqlite3.connect(DB_PATH) as conn:
-        cursor = conn.cursor()
-        cursor.execute("""
-            SELECT task_type, model_name, user_input, response, timestamp
-            FROM history
-            ORDER BY id DESC LIMIT ?
-        """, (limit,))
-        return cursor.fetchall()
+    history.append(entry)
+
+    with open(HISTORY_FILE, 'w') as f:
+        json.dump(history, f, indent=2)
