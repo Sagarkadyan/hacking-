@@ -46,6 +46,7 @@ def make_commits(count, reason="Auto"):
     for i in range(count):
         with open("autocommit_log.txt", "a") as f:
             f.write(f"{reason} commit {i+1} on {datetime.now().isoformat()}\n")
+              
 
         subprocess.call(["git", "add", "."])
         subprocess.call(["git", "commit", "-m", f"{reason} commit {i+1} "])
