@@ -152,7 +152,7 @@ while True:
 '''
 n=int(input())
 for i  in range(1,n+2,2):
-        print("*"*i)'''
+        print("*"*i)
 prices = input().split(",")
 for i in range(len(prices)):
     prices[i] = int(prices[i])
@@ -176,6 +176,80 @@ for i in range(len(prices)):
 
 
 
+
+
 print("Can buy:", affordable_items)
 print("Total budget needed:", total_needed)
 print("Can't afford:", cant_afford)
+'''
+from flask import Flask, render_template_string, request, redirect
+import sqlite3
+
+app = Flask(__name__)
+
+# Initialize DB
+conn = sqlite3.connect('todo.db')
+c = conn.cursor()
+c.execute('''CREATE TABLE IF NOT EXISTS tasks (id INTEGER PRIMARY KEY, task TEXT)''')
+conn.commit()
+conn.close()
+
+# HTML Template
+HTML = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-xl mx-auto bg-white rounded-xl shadow-md p-6">
+        <h1 class="text-2xl font-bold mb-4">To-Do List</h1>
+        <form action="/add" method="post" class="flex mb-4">
+            <input type="text" name="task" placeholder="New task..." required class="flex-1 p-2 border rounded-l">
+            <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-r">Add</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+            <li class="flex justify-between items-center mb-2">
+                <span>{{ task[1] }}</span>
+                <a href="/delete/{{ task[0] }}" class="text-red-500">Delete</a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
+"""
+
+@app.route('/')
+def index():
+    conn = sqlite3.connect('todo.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM tasks")
+    tasks = c.fetchall()
+    conn.close()
+    return render_template_string(HTML, tasks=tasks)
+
+@app.route('/add', methods=['POST'])
+def add():
+    task = request.form['task']
+    conn = sqlite3.connect('todo.db')
+    c = conn.cursor()
+    c.execute("INSERT INTO tasks (task) VALUES (?)", (task,))
+    conn.commit()
+    conn.close()
+    return redirect('/')
+
+@app.route('/delete/<int:task_id>')
+def delete(task_id):
+    conn = sqlite3.connect('todo.db')
+    c = conn.cursor()
+    c.execute("DELETE FROM tasks WHERE id = ?", (task_id,))
+    conn.commit()
+    conn.close()
+    return redirect('/')
+
+if __name__ == '__main__':
+    app.run(debug=True)
