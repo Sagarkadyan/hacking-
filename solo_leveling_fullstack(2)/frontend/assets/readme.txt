@@ -1,1 +1,0 @@
-Place your avatar, icons, and backgrounds here.
