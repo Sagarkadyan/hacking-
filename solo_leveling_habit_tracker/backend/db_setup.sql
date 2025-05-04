@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS solo_leveling;
+USE solo_leveling;
+CREATE TABLE IF NOT EXISTS users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    level INT DEFAULT 1,
+    xp INT DEFAULT 0
+);

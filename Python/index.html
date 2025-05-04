@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Solo Leveling: Calisthenics Quest - Anime Style</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&family=Orbitron:wght@700&family=Rajdhani&display=swap');
+
+  /* Reset and base */
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #c3f7ff;
+    background: radial-gradient(circle at center, #020308, #000000 100%);
+    overflow: hidden;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    overflow-y: hidden;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    top: -20%;
+    left: -10%;
+    width: 130vw;
+    height: 140vh;
+    background: url('https://cdn.pixabay.com/photo/2017/05/31/17/44/silhouette-2369780_1280.png') no-repeat center center / cover;
+    opacity: 0.05;
+    filter: drop-shadow(0 0 6px #00fff7);
+    pointer-events: none;
+    animation: subtleAura 8s ease-in-out infinite alternate;
+    z-index: 0;
+  }
+
+  @keyframes subtleAura {
+    0% {filter: drop-shadow(0 0 10px #00ffffaa);}
+    100% {filter: drop-shadow(0 0 20px #00fff7cc);}
+  }
+
+  #app {
+    max-width: 350px;
+    height: 600px;
+    margin: 0 auto;
+    padding: 12px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(145deg, #040811, #00131d);
+    border-radius: 14px;
+    box-shadow: 0 0 40px 1px #0ff inset, 0 0 40px 6px #00faff44;
+    position: relative;
+    z-index: 1;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow:
+      0 0 12px #00fff7, 
+      0 0 20px #00e7ff,
+      0 0 30px #00b9e7;
+    user-select: none;
+  }
+  header h1 {
+    color: #00fff9;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.7rem;
+    margin: 0;
+  }
+  header small {
+    color: #22ffffcc;
+    font-weight: 700;
+    font-size: 0.85rem;
+    display: block;
+    margin-top: 2px;
+    text-shadow:
+      0 0 8px #00fff7,
+      0 0 10px #00c2ff;
+  }
+
+  /* Character Section */
+  #character {
+    display: flex;
+    background: #0a1a27cc;
+    border-radius: 14px;
+    padding: 10px;
+    box-shadow:
+      0 0 20px #00fff7bb inset;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 2;
+  }
+  #character::after {
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    box-shadow:
+      0 0 40px 3px #00fff7aa,
+      0 0 70px 30px #00999922 inset;
+    filter: blur(6px);
+    z-index: -1;
+    animation: neonPulse 5s ease-in-out infinite alternate;
+  }
+  @keyframes neonPulse {
+    0%, 100% {
+      box-shadow:
+        0 0 40px 3px #00fff7bb,
+        0 0 70px 30px #00999922 inset;
+    }
+    50% {
+      box-shadow:
+        0 0 60px 6px #00ffffee,
+        0 0 90px 40px #00bbbb33 inset;
+    }
+  }
+  #avatar {
+    flex-shrink: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    border: 5px solid #00f8ffd0;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-right: 14px;
+    box-shadow:
+      0 0 22px #00fff7,
+      0 0 38px #00fff7,
+      0 0 40px #009999,
+      0 0 70px #00fff7cc;
+    animation: soulAura 4s ease-in-out infinite alternate;
+    cursor: pointer;
+  }
+  @keyframes soulAura {
+    0% {
+      box-shadow:
+        0 0 22px #00fff7,
+        0 0 38px #00fff7,
+        0 0 40px #009999,
+        0 0 70px #00fff7cc;
+      filter: brightness(1);
+    }
+    50% {
+      box-shadow:
+        0 0 40px #00ffffee,
+        0 0 60px #00f0ffdd,
+        0 0 50px #00aaee,
+        0 0 90px #00fff7cc;
+      filter: brightness(1.2);
+    }
+    100% {
+      box-shadow:
+        0 0 22px #00fff7,
+        0 0 38px #00fff7,
+        0 0 40px #009999,
+        0 0 70px #00fff7cc;
+      filter: brightness(1);
+    }
+  }
+  #character-details {
+    flex-grow: 1;
+  }
+  #character-details input[type="text"] {
+    width: 100%;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #00f5ff;
+    color: #3ef5ff;
+    font-size: 1.3rem;
+    font-weight: 700;
+    outline: none;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+    text-shadow: 0 0 8px #00fff7;
+    text-transform: uppercase;
+    cursor: text;
+    transition: border-color 0.3s ease;
+  }
+  #character-details input[type="text"]:focus {
+    border-bottom-color: #66ffff;
+  }
+  #statsRadar {
+    max-width: 160px;
+    max-height: 160px;
+    filter: drop-shadow(0 0 10px #00ffffcc);
+  }
+  .stats-level-hp-xp {
+    margin-top: 8px;
+    color: #00f1ff;
+    text-shadow: 0 0 7px #00f2ffab;
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .stats-level-hp-xp > div {
+    margin-bottom: 5px;
+  }
+  .stats-bar {
+    background: #121212;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 5px;
+    height: 10px;
+    box-shadow: inset 0 0 14px #00fff7cc;
+  }
+  .stats-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00fff7, #00c2ff);
+    transition: width 0.6s ease-out;
+    box-shadow: 0 0 12px #00f8ffcc;
+  }
+
+  /* Dashboard */
+  #dashboard {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 8px;
+  }
+  #dashboard::-webkit-scrollbar {
+    width: 6px;
+  }
+  #dashboard::-webkit-scrollbar-thumb {
+    background: #00f0ff99;
+    border-radius: 4px;
+    box-shadow: inset 0 0 4px #00c4ffbb;
+  }
+
+  h2.section-title {
+    color: #00f6ffcc;
+    margin-bottom: 8px;
+    border-bottom: 2px solid #00e6ffcc;
+    padding-bottom: 4px;
+    user-select: none;
+    text-shadow:
+      0 0 8px #00dfff,
+      0 0 16px #00b3ff;
+    text-transform: uppercase;
+    font-weight: 800;
+  }
+
+  /* Quests container */
+  .quest-section {
+    margin-bottom: 18px;
+    background: #001524cc;
+    padding: 8px 10px;
+    border-radius: 14px;
+    box-shadow:
+      inset 1px 1px 12px #00ecffcc,
+      inset -1px -1px 12px #007d9a88;
+    transition: background-color 0.3s ease;
+  }
+  .quest-section:hover {
+    background: #003056dd;
+  }
+
+  .quest-list {
+    max-height: 140px;
+    overflow-y: auto;
+  }
+  .quest-list::-webkit-scrollbar {
+    width: 5px;
+  }
+  .quest-list::-webkit-scrollbar-thumb {
+    background: #00c3ffcc;
+    border-radius: 3px;
+  }
+
+  .quest-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #012d45;
+    margin-bottom: 6px;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: grab;
+    box-shadow:
+      0 0 20px #00cfffcc inset;
+    color: #9adeffcc;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    user-select: none;
+    transition:
+      background-color 0.45s ease,
+      color 0.45s ease,
+      box-shadow 0.45s ease;
+  }
+  .quest-item:focus {
+    outline: 3px solid #00f9ffcc;
+  }
+  .quest-item.dragging {
+    opacity: 0.7;
+    cursor: grabbing;
+    box-shadow:
+      0 0 28px #00ffffaa inset;
+  }
+  .quest-item.completed {
+    background: #00551dcc;
+    text-decoration: line-through;
+    color: #88dabbcc;
+    box-shadow:
+      0 0 25px #044f4477 inset;
+  }
+  .quest-item.completed::after {
+    content: "✓";
+    margin-left: 8px;
+    color: #00ffeaaa;
+    font-weight: 900;
+    text-shadow:
+      0 0 6px #00fff7cc;
+  }
+
+  .quest-left {
+    flex-grow: 1;
+    user-select: text;
+    font-weight: 700;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    color: #a4f0ff;
+  }
+  .quest-left .streak {
+    margin-left: 6px;
+    color: #00aaffcc;
+    font-weight: 700;
+    text-shadow:
+      0 0 4px #00c6ff;
+    user-select: none;
+  }
+  .quest-controls button {
+    background: #00ffe7;
+    border: none;
+    padding: 6px 16px;
+    font-weight: 900;
+    border-radius: 6px;
+    color: #00121a;
+    cursor: pointer;
+    margin-left: 8px;
+    user-select: none;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 1.2px;
+    transition: 
+      background-color 0.3s ease,
+      color 0.3s ease,
+      transform 0.2s ease;
+  }
+  .quest-controls button:hover {
+    background-color: #00d4ff;
+    color: #000;
+    transform: scale(1.12);
+  }
+  .quest-controls button:active {
+    transform: scale(0.95);
+  }
+
+  .quest-controls button.delBtn {
+    background-color: #ff0044;
+    color: #fff;
+  }
+  .quest-controls button.delBtn:hover {
+    background-color: #dd002f;
+    color: #fff;
+  }
+
+  /* Progress bars */
+  .xp-bar, .hp-bar, .skill-xp-bar {
+    width: 100%;
+    height: 14px;
+    background: #001426;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 8px 0 18px;
+    box-shadow:
+      inset 0 0 12px #00ffffcc;
+  }
+  .xp-bar-fill, .hp-bar-fill, .skill-xp-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #00fff7, #00aaff);
+    transition: width 1s cubic-bezier(0.22, 1, 0.36, 1);
+    box-shadow: 0 0 18px #007bb655, 0 0 25px #00ffffcc;
+  }
+
+  /* Skill specialization */
+  #skills {
+    background: #001c2cdd;
+    border-radius: 14px;
+    padding: 14px 12px 12px;
+    box-shadow:
+      inset 0 0 25px #00e8ffcc;
+    margin-bottom: 16px;
+  }
+  #skills h3 {
+    color: #00aaffcc;
+    margin: 0 0 12px 0;
+    font-family: 'Orbitron', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 900;
+    user-select: none;
+  }
+  .skill-item {
+    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+  }
+  .skill-label {
+    font-weight: 900;
+    color: #00d6ff;
+    font-family: 'Orbitron', sans-serif;
+    user-select: none;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .skill-level {
+    font-size: 1rem;
+    color: #40eaffdd;
+    text-shadow: 0 0 8px #06b0ff;
+    font-weight: 800;
+    margin-left: 6px;
+    user-select: none;
+    font-family: 'Orbitron', sans-serif;
+  }
+  .skill-bar-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+  }
+
+  /* Motivational tagline */
+  #motivation {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #00aaffbb;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    letter-spacing: 6px;
+    font-size: 1.32rem;
+    text-shadow:
+      0 0 16px #33ddff,
+      0 0 22px #33bbff;
+    pointer-events: none;
+    user-select: none;
+    animation: flickerLight 5s infinite;
+    white-space: nowrap;
+    z-index: 3;
+  }
+  @keyframes flickerLight {
+    0%, 100% { opacity: 0.97; }
+    50% { opacity: 0.65; }
+  }
+
+  /* Popup level-up notification */
+  #levelUpPopup {
+    position: fixed;
+    top: 40%;
+    left: 50%;
+    width: 300px;
+    padding: 16px 28px;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #001f27, #005566);
+    border: 3px solid #00ffffdd;
+    border-radius: 20px;
+    color: #00eaff;
+    font-weight: 900;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    text-align: center;
+    box-shadow: 
+      0 0 35px 8px #00fff7cc,
+      0 0 50px 15px #00ccff99 inset;
+    opacity: 0;
+    pointer-events: none;
+    user-select: none;
+    animation: popUpFade2 1.6s ease forwards;
+    z-index: 1000;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  @keyframes popUpFade2 {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -60%) scale(0.6);
+      filter: drop-shadow(0 0 18px #00fff7);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.15);
+      filter: drop-shadow(0 0 30px #00fff7);
+    }
+    80% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(1);
+      filter: drop-shadow(0 0 12px #00bbb7);
+    }
+  }
+
+  /* Input styles for new quest */
+  #newGrowthForm, #newBattleForm {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 12px;
+  }
+  #newGrowthForm input[type="text"],
+  #newBattleForm input[type="text"] {
+    flex-grow: 1;
+    border: 1.5px solid #00dfffcc;
+    border-radius: 12px;
+    padding: 8px 14px;
+    background: transparent;
+    color: #80f7ff;
+    font-weight: 800;
+    outline: none;
+    font-size: 1.05rem;
+    font-family: 'Roboto Condensed', sans-serif;
+    letter-spacing: 1px;
+    box-shadow: inset 0 0 10px #00e6ffbb;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  #newGrowthForm input[type="text"]:focus,
+  #newBattleForm input[type="text"]:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 18px #00e6ffcc;
+  }
+  #newGrowthForm button, #newBattleForm button {
+    background: linear-gradient(135deg, #00fff7, #00ccff);
+    border: none;
+    color: #001212;
+    font-weight: 900;
+    border-radius: 12px;
+    padding: 8px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1.8px;
+    box-shadow: 0 0 15px #00eeffbb;
+    transition: background-color 0.25s ease;
+  }
+  #newGrowthForm button:hover,
+  #newBattleForm button:hover {
+    background: linear-gradient(135deg, #00d6ff, #0099cc);
+    color: #eef;
+    box-shadow: 0 0 25px #00bbffcc;
+  }
+  #newGrowthForm button:active,
+  #newBattleForm button:active {
+    transform: scale(0.95);
+  }
+
+  /* Accessibility improvements for button focus */
+  button:focus, input:focus {
+    outline: 2.8px solid #00dbffcc;
+    outline-offset: 2px;
+  }
+
+  /* Animations for quest completion */
+  @keyframes questFlash {
+    0% { background-color: #00552ddd }
+    30% { background-color: #00ffaa44; color: #001314 }
+    60% { background-color: #00552ddd; color: #9adeffcc }
+    100% { background-color: #00552ddd; color: #9adeffcc }
+  }
+  .quest-item.completed {
+    animation: questFlash 1s ease;
+  }
+
+</style>
+</head>
+<body>
+  <div id="app" role="main" aria-label="Solo Leveling Calisthenics Quest App">
+    <header>
+      <h1>Solo Leveling: Calisthenics Quest</h1>
+      <small>Gamify Your Life — Arise!</small>
+    </header>
+
+    <section id="character" aria-label="Character Information">
+      <div id="avatar" tabindex="0" aria-label="Character Avatar" role="img" title="Tap to change avatar"></div>
+      <div id="character-details">
+        <input type="text" id="charName" aria-label="Character Name" placeholder="Enter your character name" maxlength="20" />
+        <canvas id="statsRadar" aria-label="Character Stats Radar Chart" role="img" width="160" height="160"></canvas>
+        <div class="stats-level-hp-xp" aria-live="polite">
+          <div>Level: <span id="charLevel">1</span></div>
+          <div>HP: <span id="charHP">100</span> / <span id="charMaxHP">100</span></div>
+          <div>XP: <span id="charXP">0</span> / <span id="charXPToLevel">100</span></div>
+          <div class="xp-bar" aria-label="Experience progress">
+            <div id="xpBarFill" class="xp-bar-fill" style="width: 0%;"></div>
+          </div>
+          <div class="hp-bar" aria-label="Health points progress">
+            <div id="hpBarFill" class="hp-bar-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" aria-label="Skill Specialization">
+      <h3>Skill Specialization</h3>
+      <div id="skillsContainer"></div>
+    </section>
+
+    <section id="dashboard" aria-label="Dashboard with quests and progress">
+      <h2 class="section-title">Growth Quests (Positive Habits)</h2>
+      <div class="quest-section" aria-label="Growth quests list">
+        <div id="growthList" class="quest-list" aria-live="polite"></div>
+        <form id="newGrowthForm" aria-label="Add new growth quest" autocomplete="off">
+          <input type="text" id="newGrowthInput" placeholder="Add Growth Quest" aria-required="true" />
+          <button type="submit" aria-label="Add new growth quest">Add</button>
+        </form>
+      </div>
+
+      <h2 class="section-title">Battle Quests (Bad Habits to Defeat)</h2>
+      <div class="quest-section" aria-label="Battle quests list">
+        <div id="battleList" class="quest-list" aria-live="polite"></div>
+        <form id="newBattleForm" aria-label="Add new battle quest" autocomplete="off">
+          <input type="text" id="newBattleInput" placeholder="Add Battle Quest" aria-required="true" />
+          <button type="submit" aria-label="Add new battle quest">Add</button>
+        </form>
+      </div>
+    </section>
+
+    <div id="motivation" aria-hidden="true">You're the main character now — Each task is XP</div>
+
+    <div id="levelUpPopup" aria-live="assertive" role="alert" aria-atomic="true" aria-hidden="true"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    (() => {
+      // Constants and variables remain the same as before, reused with added animations
+
+      const MAX_LEVEL = 50;
+      const BASE_XP = 100;
+      const ATTRIBUTES = ['Strength', 'Stamina', 'Discipline', 'Flexibility', 'Consistency'];
+      const SKILLS = [
+        { name: 'Push-up Progression' },
+        { name: 'Pull-up Mastery' },
+        { name: 'Flexibility Routines' },
+        { name: 'Cardio Stamina' }
+      ];
+
+      function xpForLevel(level) {
+        return Math.floor(BASE_XP * Math.pow(level, 1.8));
+      }
+
+      const STORAGE_KEY = 'sololeveling_calisthenics_app';
+
+      let state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {
+        charName: 'Hunter',
+        avatarIndex: 0,
+        level: 1,
+        hp: 100,
+        maxHP: 100,
+        xp: 0,
+        stats: {
+          Strength: 10,
+          Stamina: 10,
+          Discipline: 10,
+          Flexibility: 10,
+          Consistency: 10
+        },
+        skills: SKILLS.map(() => ({ xp: 0, level: 1 })),
+        growthQuests: [
+          { id: 1, name: 'Push-Ups', completed: false, streak: 0 },
+          { id: 2, name: 'Meditation', completed: false, streak: 0 },
+          { id: 3, name: 'Reading', completed: false, streak: 0 }
+        ],
+        battleQuests: [
+          { id: 101, name: 'Procrastination', completed: false, streak: 0 },
+          { id: 102, name: 'Junk Food', completed: false, streak: 0 },
+          { id: 103, name: 'Skipping Workouts', completed: false, streak: 0 }
+        ],
+        lastCheckin: null,
+      };
+
+      const avatars = [
+        'https://images.unsplash.com/photo-1549924231-f129b911e442?auto=format&fit=crop&w=80&h=80&q=80',
+        'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=80&h=80&q=80',
+        'https://images.unsplash.com/photo-1542838687-0140f5f2278a?auto=format&fit=crop&w=80&h=80&q=80',
+        'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=80&h=80&q=80',
+        'https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?auto=format&fit=crop&w=80&h=80&q=80',
+      ];
+
+      // Element references
+      const avatarEl = document.getElementById('avatar');
+      const charNameEl = document.getElementById('charName');
+      const charLevelEl = document.getElementById('charLevel');
+      const charHPEl = document.getElementById('charHP');
+      const charMaxHPEl = document.getElementById('charMaxHP');
+      const charXPEl = document.getElementById('charXP');
+      const charXPToLevelEl = document.getElementById('charXPToLevel');
+      const xpBarFill = document.getElementById('xpBarFill');
+      const hpBarFill = document.getElementById('hpBarFill');
+
+      const growthListEl = document.getElementById('growthList');
+      const battleListEl = document.getElementById('battleList');
+
+      const newGrowthForm = document.getElementById('newGrowthForm');
+      const newGrowthInput = document.getElementById('newGrowthInput');
+      const newBattleForm = document.getElementById('newBattleForm');
+      const newBattleInput = document.getElementById('newBattleInput');
+
+      const levelUpPopup = document.getElementById('levelUpPopup');
+      const motivationEl = document.getElementById('motivation');
+
+      const skillsContainer = document.getElementById('skillsContainer');
+
+      const radarCtx = document.getElementById('statsRadar').getContext('2d');
+      let radarChart;
+
+      function saveState() {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      }
+
+      function updateAvatar() {
+        avatarEl.style.backgroundImage = `url(${avatars[state.avatarIndex]})`;
+      }
+
+      avatarEl.addEventListener('click', () => {
+        state.avatarIndex = (state.avatarIndex + 1) % avatars.length;
+        updateAvatar();
+        saveState();
+      });
+      avatarEl.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          avatarEl.click();
+        }
+      });
+
+      function updateRadarChart() {
+        const data = {
+          labels: ATTRIBUTES,
+          datasets: [{
+            label: 'Stats',
+            data: ATTRIBUTES.map(attr => state.stats[attr]),
+            backgroundColor: 'rgba(0, 255, 255, 0.22)',
+            borderColor: '#00fff7',
+            borderWidth: 3,
+            pointBackgroundColor: '#00f0ff',
+            pointBorderColor: '#00fff7',
+            pointRadius: 6,
+            pointHoverRadius: 9,
+            fill: true,
+            tension: 0.3,
+          }],
+        };
+        const options = {
+          scales: {
+            r: {
+              angleLines: {
+                color: '#006666aa',
+              },
+              grid: {
+                color: '#003333dd',
+              },
+              min: 0,
+              max: 30,
+              ticks: {
+                stepSize: 5,
+                color: '#00c8f7dd',
+                backdropColor: 'transparent',
+                showLabelBackdrop: false,
+                font: {
+                  weight: 'bold',
+                  size: 12
+                },
+              }
+            }
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              enabled: true,
+              backgroundColor: '#005566cc',
+              titleFont: { weight: 'bold' },
+              bodyFont: { weight: 'bold' },
+              cornerRadius: 5,
+              padding: 8,
+            }
+          },
+          responsive: false,
+          maintainAspectRatio: false,
+        };
+
+        if (radarChart) radarChart.destroy();
+        radarChart = new Chart(radarCtx, {
+          type: 'radar',
+          data,
+          options,
+        });
+      }
+
+      function xpToNextLevel() {
+        return xpForLevel(state.level);
+      }
+
+      function updateCharacterDisplay() {
+        charNameEl.value = state.charName;
+        charLevelEl.textContent = state.level;
+        charHPEl.textContent = state.hp;
+        charMaxHPEl.textContent = state.maxHP;
+        charXPEl.textContent = state.xp;
+        const xpNext = xpToNextLevel();
+        charXPToLevelEl.textContent = xpNext;
+
+        const xpPct = Math.min(100, (state.xp / xpNext) * 100);
+        xpBarFill.style.width = xpPct + '%';
+
+        const hpPct = Math.min(100, (state.hp / state.maxHP) * 100);
+        hpBarFill.style.width = hpPct + '%';
+
+        updateRadarChart();
+      }
+
+      function checkLevelUp() {
+        let leveledUp = false;
+        while (state.xp >= xpToNextLevel() && state.level < MAX_LEVEL) {
+          state.xp -= xpToNextLevel();
+          state.level++;
+          leveledUp = true;
+
+          state.maxHP = Math.min(220, state.maxHP + 12);
+          state.hp = Math.min(state.hp + 20, state.maxHP);
+
+          const randomStat = ATTRIBUTES[Math.floor(Math.random() * ATTRIBUTES.length)];
+          state.stats[randomStat] = Math.min(30, state.stats[randomStat] + 6);
+
+          for (let skill of state.skills) {
+            skill.xp += 12;
+            updateSkillLevel(skill);
+          }
+
+          showLevelUpPopup(`LEVEL UP! +6 ${randomStat.toUpperCase()}, +20 HP`);
+        }
+        if (leveledUp) {
+          saveState();
+          updateCharacterDisplay();
+          renderSkillSpecialization();
+        }
+      }
+
+      function showLevelUpPopup(msg) {
+        levelUpPopup.textContent = msg;
+        levelUpPopup.style.opacity = '1';
+        levelUpPopup.style.pointerEvents = 'auto';
+        levelUpPopup.setAttribute('aria-hidden', 'false');
+        levelUpPopup.style.animation = 'none';
+        levelUpPopup.offsetHeight; // trigger reflow
+        levelUpPopup.style.animation = null;
+
+        setTimeout(() => {
+          levelUpPopup.style.opacity = '0';
+          levelUpPopup.style.pointerEvents = 'none';
+          levelUpPopup.setAttribute('aria-hidden', 'true');
+        }, 3200);
+      }
+
+      function renderQuestList(list, container, isBattle) {
+        container.innerHTML = '';
+        list.forEach(q => {
+          const item = document.createElement('div');
+          item.className = 'quest-item';
+          item.setAttribute('draggable', 'true');
+          item.dataset.id = q.id;
+
+          if (q.completed) {
+            item.classList.add('completed');
+          }
+
+          const leftDiv = document.createElement('div');
+          leftDiv.className = 'quest-left';
+          leftDiv.textContent = q.name;
+          if (q.streak > 0) {
+            const streakSpan = document.createElement('span');
+            streakSpan.textContent = `🔥${q.streak}`;
+            streakSpan.className = 'streak';
+            leftDiv.appendChild(streakSpan);
+          }
+          item.appendChild(leftDiv);
+
+          const controls = document.createElement('div');
+          controls.className = 'quest-controls';
+
+          const completeBtn = document.createElement('button');
+          completeBtn.textContent = q.completed ? 'Undo' : 'Done';
+          completeBtn.title = q.completed ? 'Undo completion' : 'Mark as done';
+          completeBtn.addEventListener('click', () => {
+            q.completed = !q.completed;
+            if (q.completed) {
+              q.streak++;
+              gainXP(isBattle ? 10 : 15);
+              restoreHP(isBattle ? 7 : 10);
+            } else {
+              q.streak = Math.max(0, q.streak - 1);
+              loseHP(isBattle ? 10 : 14);
+              loseXP(isBattle ? 7 : 10);
+            }
+            saveState();
+            renderAllQuests();
+            checkLevelUp();
+          });
+          controls.appendChild(completeBtn);
+
+          const delBtn = document.createElement('button');
+          delBtn.textContent = 'Del';
+          delBtn.title = 'Delete quest';
+          delBtn.className = 'delBtn';
+          delBtn.addEventListener('click', () => {
+            if (confirm(`Delete quest "${q.name}"? This cannot be undone.`)) {
+              const idx = list.findIndex(v => v.id === q.id);
+              if (idx !== -1) {
+                list.splice(idx, 1);
+                saveState();
+                renderAllQuests();
+              }
+            }
+          });
+          controls.appendChild(delBtn);
+
+          item.appendChild(controls);
+          container.appendChild(item);
+        });
+        addDragDrop(container, list);
+      }
+
+      function renderAllQuests() {
+        renderQuestList(state.growthQuests, growthListEl, false);
+        renderQuestList(state.battleQuests, battleListEl, true);
+      }
+
+      function gainXP(amount) {
+        state.xp += amount;
+        const skillIndex = Math.floor(Math.random() * state.skills.length);
+        state.skills[skillIndex].xp += amount;
+        updateSkillLevel(state.skills[skillIndex]);
+        saveState();
+      }
+      function loseXP(amount) {
+        state.xp = Math.max(0, state.xp - amount);
+        saveState();
+      }
+
+      function restoreHP(amount) {
+        state.hp = Math.min(state.hp + amount, state.maxHP);
+        saveState();
+      }
+      function loseHP(amount) {
+        state.hp = Math.max(0, state.hp - amount);
+        saveState();
+      }
+
+      function addDragDrop(container, questList) {
+        let dragSrcEl = null;
+
+        function handleDragStart(e) {
+          dragSrcEl = this;
+          e.dataTransfer.effectAllowed = 'move';
+          e.dataTransfer.setData('text/plain', this.dataset.id);
+          this.classList.add('dragging');
+        }
+        function handleDragOver(e) {
+          if (e.preventDefault) {
+            e.preventDefault();
+          }
+          e.dataTransfer.dropEffect = 'move';
+          return false;
+        }
+        function handleDragEnter(e) {
+          this.classList.add('over');
+        }
+        function handleDragLeave(e) {
+          this.classList.remove('over');
+        }
+        function handleDrop(e) {
+          if (e.stopPropagation) {
+            e.stopPropagation();
+          }
+          if (dragSrcEl !== this) {
+            const srcId = dragSrcEl.dataset.id;
+            const tgtId = this.dataset.id;
+            const srcIdx = questList.findIndex(q => q.id == srcId);
+            const tgtIdx = questList.findIndex(q => q.id == tgtId);
+            if (srcIdx !== -1 && tgtIdx !== -1) {
+              questList.splice(tgtIdx, 0, ...questList.splice(srcIdx,1));
+              saveState();
+              renderAllQuests();
+            }
+          }
+          return false;
+        }
+        function handleDragEnd(e) {
+          this.classList.remove('dragging');
+          const items = container.querySelectorAll('.quest-item');
+          items.forEach(item => item.classList.remove('over'));
+        }
+
+        const items = container.querySelectorAll('.quest-item');
+        items.forEach(item => {
+          item.addEventListener('dragstart', handleDragStart);
+          item.addEventListener('dragenter', handleDragEnter);
+          item.addEventListener('dragover', handleDragOver);
+          item.addEventListener('dragleave', handleDragLeave);
+          item.addEventListener('drop', handleDrop);
+          item.addEventListener('dragend', handleDragEnd);
+        });
+      }
+
+      newGrowthForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const val = newGrowthInput.value.trim();
+        if (val.length > 1) {
+          state.growthQuests.push({
+            id: Date.now(),
+            name: val,
+            completed: false,
+            streak: 0,
+          });
+          newGrowthInput.value = '';
+          saveState();
+          renderAllQuests();
+        }
+      });
+      newBattleForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const val = newBattleInput.value.trim();
+        if (val.length > 1) {
+          state.battleQuests.push({
+            id: Date.now(),
+            name: val,
+            completed: false,
+            streak: 0,
+          });
+          newBattleInput.value = '';
+          saveState();
+          renderAllQuests();
+        }
+      });
+
+      charNameEl.addEventListener('input', e => {
+        state.charName = e.target.value || 'Hunter';
+        saveState();
+      });
+
+      function xpForSkillLevel(level) {
+        return 30 * Math.pow(level, 1.5);
+      }
+      function updateSkillLevel(skill) {
+        while (skill.xp >= xpForSkillLevel(skill.level)) {
+          skill.xp -= xpForSkillLevel(skill.level);
+          skill.level = Math.min(MAX_LEVEL, skill.level + 1);
+          showLevelUpPopup(`SKILL Lv. UP! Now Lv. ${skill.level}`);
+        }
+      }
+      function renderSkillSpecialization() {
+        skillsContainer.innerHTML = '';
+        state.skills.forEach((skill, i) => {
+          let skillDiv = document.createElement('div');
+          skillDiv.className = 'skill-item';
+          skillDiv.setAttribute('tabindex', '0');
+
+          let label = document.createElement('span');
+          label.className = 'skill-label';
+          label.textContent = SKILLS[i].name;
+
+          let lvl = document.createElement('span');
+          lvl.className = 'skill-level';
+          lvl.textContent = `Lv. ${skill.level}`;
+
+          let barWrap = document.createElement('div');
+          barWrap.className = 'skill-bar-wrap';
+
+          let bar = document.createElement('div');
+          bar.className = 'skill-xp-bar';
+          bar.setAttribute('aria-label', `${SKILLS[i].name} progress`);
+
+          let fill = document.createElement('div');
+          fill.className = 'skill-xp-bar-fill';
+          let pct = Math.min(100, (skill.xp / xpForSkillLevel(skill.level)) * 100);
+          fill.style.width = pct + '%';
+
+          bar.appendChild(fill);
+          barWrap.appendChild(bar);
+          barWrap.appendChild(lvl);
+
+          skillDiv.appendChild(label);
+          skillDiv.appendChild(barWrap);
+          skillsContainer.appendChild(skillDiv);
+        });
+      }
+
+      // Daily check-in reset logic (simplified, run once per day)
+      function dailyCheckin() {
+        let today = new Date().toDateString();
+        if (state.lastCheckin !== today) {
+          [...state.growthQuests, ...state.battleQuests].forEach(q => q.completed = false);
+          state.lastCheckin = today;
+
+          state.battleQuests.forEach(q => {
+            if (!q.completed && q.streak > 0) {
+              loseHP(18);
+              loseXP(12);
+              q.streak = 0;
+            }
+          });
+          saveState();
+          renderAllQuests();
+          updateCharacterDisplay();
+        }
+      }
+
+      function init() {
+        updateAvatar();
+        updateCharacterDisplay();
+        renderAllQuests();
+        renderSkillSpecialization();
+        dailyCheckin();
+      }
+
+      window.addEventListener('load', init);
+    })();
+  </script>
+</body>
+</html>
+
