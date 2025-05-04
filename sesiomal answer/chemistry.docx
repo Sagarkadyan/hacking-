@@ -212,4 +212,97 @@ Where:
     E∘E∘: Stand
 
 
+**Q.24: Molecular Orbital Theory of O₂ molecule**
+According to Molecular Orbital Theory (MOT), atomic orbitals from two atoms combine to form bonding and antibonding molecular orbitals (MOs), which extend over the entire molecule. Oxygen molecule (O₂) consists of 16 total electrons (8 from each oxygen atom).
+
+The molecular orbitals are filled in the following order:
+$\sigma_{1s}^2 \sigma^*_{1s}^2 \sigma_{2s}^2 \sigma^*_{2s}^2 \sigma_{2p_z}^2 \pi_{2p_x}^2 \pi_{2p_y}^2 \pi^*_{2p_x}^1 \pi^*_{2p_y}^1$
+
+* The $\pi_{2p_x}$ and $\pi_{2p_y}$ orbitals are degenerate.
+* The antibonding $\pi^*$ orbitals each hold one unpaired electron.
+
+**Bond order** = $\frac{(\text{Bonding electrons} - \text{Antibonding electrons})}{2} = \frac{10 - 6}{2} = 2$
+
+This gives O₂ a **double bond**. The presence of unpaired electrons in degenerate $\pi^*$ orbitals explains why oxygen is **paramagnetic**, a fact that cannot be explained by classical Lewis structures. MOT correctly predicts the magnetic behavior and delocalization of electrons.
+
+---
+
+**Q.25: Construction of MO diagram for N₂ and calculation of bond order**
+In the nitrogen molecule (N₂), each nitrogen atom has 7 electrons, giving a total of 14 electrons.
+
+The molecular orbital configuration for second-period homonuclear diatomics (Z < 8) is:
+$\sigma_{1s}^2 \sigma^*_{1s}^2 \sigma_{2s}^2 \sigma^*_{2s}^2 \pi_{2p_x}^2 \pi_{2p_y}^2 \sigma_{2p_z}^2$
+
+* The $\pi$ orbitals (2p\_x and 2p\_y) are filled before $\sigma_{2p_z}$ due to their lower energy.
+
+**Bond order** = $\frac{(10 - 4)}{2} = 3$
+
+This indicates a **triple bond** in N₂. All electrons are paired, making the molecule **diamagnetic**. The high bond order is consistent with the molecule’s stability and high bond dissociation energy.
+
+---
+
+**Q.26: Comparison of bond strength and bond length**
+Bond strength and bond length are inversely related properties. As bond order increases:
+
+* **Bond strength increases** (stronger overlap and greater electron sharing)
+* **Bond length decreases** (nuclei pulled closer together)
+
+**Examples:**
+
+* **N₂**: Bond order = 3 → very strong triple bond → shortest bond length (\~110 pm)
+* **O₂**: Bond order = 2 → double bond → intermediate bond length (\~121 pm)
+* **F₂**: Bond order = 1 → single bond → weakest and longest (\~142 pm)
+
+**Factors affecting bond length and strength:**
+
+* **Bond Order**: More shared electrons → stronger and shorter bond
+* **Atomic Size**: Larger atoms form longer bonds
+* **Electronegativity**: High electronegativity difference can lead to partial ionic character
+* **Hybridization**: Greater s-character (e.g., sp > sp² > sp³) results in shorter bonds
+
+This comparison helps understand molecular stability, reactivity, and spectroscopic properties.
+
+---
+
+**Q.27: Shapes of simple molecules using VSEPR theory**
+Valence Shell Electron Pair Repulsion (VSEPR) theory predicts molecular geometry based on repulsion between electron pairs (bonding and lone pairs) around the central atom. Electron pairs arrange themselves to minimize repulsion.
+
+**Examples:**
+
+1. **BeCl₂**: Linear geometry
+
+   * Central atom: Be
+   * Electron pairs: 2 bonding, 0 lone pairs
+   * Bond angle: 180°
+
+2. **BF₃**: Trigonal planar
+
+   * Central atom: B
+   * Electron pairs: 3 bonding, 0 lone pairs
+   * Bond angle: 120°
+
+3. **CH₄**: Tetrahedral
+
+   * Central atom: C
+   * Electron pairs: 4 bonding, 0 lone pairs
+   * Bond angle: 109.5°
+
+4. **NH₃**: Trigonal pyramidal
+
+   * Central atom: N
+   * Electron pairs: 3 bonding, 1 lone pair
+   * Bond angle: \~107° (slightly less due to lone pair repulsion)
+
+5. **H₂O**: Bent (angular)
+
+   * Central atom: O
+   * Electron pairs: 2 bonding, 2 lone pairs
+   * Bond angle: \~104.5°
+
+VSEPR theory helps explain molecular shapes, polarities, and reactivity. Lone pairs exert more repulsion than bonding pairs, leading to distortions in ideal bond angles.
+
+---
+    
+
+
 
