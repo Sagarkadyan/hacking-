@@ -7,6 +7,45 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/alpinejs/3.12.0/cdn.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+    <script>
+    // Example: trigger when a user earns XP (you can tie this to a real event)
+    let xp = 0;
+    let level = 1;
+
+    function gainXP(amount) {
+        xp += amount;
+        if (xp >= 100) {
+            xp = xp - 100;
+            level += 1;
+        }
+
+        // Update UI (optional)
+        document.getElementById("xp").textContent = `${xp}/100`;
+        document.getElementById("level").textContent = `${level}`;
+
+        // Send to backend
+        fetch('http://127.0.0.1:5000/api/progress', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                username: 'default_user',
+                xp: xp,
+                level: level
+            })
+        })
+        .then(res => res.json())
+        .then(data => console.log('Saved:', data))
+        .catch(err => console.error('Error:', err));
+    }
+
+    // Example usage on button click
+    document.getElementById("pushupBtn").addEventListener("click", () => {
+        gainXP(25);
+    });
+</script>
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap');
         

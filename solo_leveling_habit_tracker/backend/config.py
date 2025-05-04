@@ -1,6 +1,6 @@
 DB_CONFIG = {
     'MYSQL_HOST': 'localhost',
-    'MYSQL_USER': 'your_username',
-    'MYSQL_PASSWORD': 'your_password',
+    'MYSQL_USER': 'root',
+    'MYSQL_PASSWORD': '123',
     'MYSQL_DB': 'solo_leveling'
 }

@@ -1,45 +1,60 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 from flask_mysqldb import MySQL
 from flask_cors import CORS
-from config import DB_CONFIG
+import os
 
 app = Flask(__name__)
 CORS(app)
 
-# Load DB config
-app.config.update(DB_CONFIG)
+# MySQL Configuration
+app.config['MYSQL_HOST'] = 'localhost'
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = '123'
+app.config['MYSQL_DB'] = 'solo_leveling'
+
 mysql = MySQL(app)
 
+# Serve index.html
 @app.route('/')
-def home():
-    return "Solo Leveling Habit Tracker API is running!"
+def serve_index():
+    return send_from_directory('../frontend', 'solo-leveling-website.html')
 
-@app.route('/get_stats', methods=['GET'])
-def get_stats():
-    username = request.args.get('username')
-    cur = mysql.connection.cursor()
-    cur.execute("SELECT level, xp FROM users WHERE username = %s", (username,))
-    result = cur.fetchone()
-    cur.close()
+# Serve JS
+@app.route('/script.js')
+def serve_script():
+    return send_from_directory('../frontend', 'script.js')
+
+# Save user progress (XP, level)
+@app.route('/api/progress', methods=['POST'])
+def save_progress():
+    data = request.get_json()
+    username = data.get('username', 'default_user')
+    xp = data['xp']
+    level = data['level']
+
+    cursor = mysql.connection.cursor()
+    cursor.execute("""
+        INSERT INTO users (username, xp, level)
+        VALUES (%s, %s, %s)
+        ON DUPLICATE KEY UPDATE xp=%s, level=%s
+    """, (username, xp, level, xp, level))
+    mysql.connection.commit()
+    cursor.close()
+
+    return jsonify({"status": "success"})
+
+# Load progress
+@app.route('/api/progress/<username>', methods=['GET'])
+def load_progress(username):
+    cursor = mysql.connection.cursor()
+    cursor.execute("SELECT xp, level FROM users WHERE username=%s", (username,))
+    result = cursor.fetchone()
+    cursor.close()
 
     if result:
-        return jsonify({'username': username, 'level': result[0], 'xp': result[1]})
+        return jsonify({"xp": result[0], "level": result[1]})
     else:
-        return jsonify({'error': 'User not found'}), 404
-
-@app.route('/update_stats', methods=['POST'])
-def update_stats():
-    data = request.json
-    username = data.get('username')
-    level = data.get('level')
-    xp = data.get('xp')
-
-    cur = mysql.connection.cursor()
-    cur.execute("INSERT INTO users (username, level, xp) VALUES (%s, %s, %s) ON DUPLICATE KEY UPDATE level=%s, xp=%s",
-                (username, level, xp, level, xp))
-    mysql.connection.commit()
-    cur.close()
-    return jsonify({'status': 'success'})
+        return jsonify({"xp": 0, "level": 1})
 
 if __name__ == '__main__':
     app.run(debug=True)
