@@ -1,58 +1,22 @@
 #include<stdio.h>
-#include<stdlib.h>
-
-
-struct stu
+struct employee
 {
-    char name[100];
-    int maths,phy,chem,rank;
-    float cutoff;
+    int age ;
+    float percent ;
+    char *name;
 };
-void main()
-{
- struct stu s[100],temp;
- int i,j,n;
- system("clear");
- printf("\n\n No. of Students.....");
- scanf("%d",&n);
- for ( i = 0; i < n; i++)
- {
-    fflush(stdin);
+int main(){
+    FILE *fp ;
+    struct employee emp[]={
+        {25,65.5,"Ravi"},
+        {21,75.5,"Roshan"},
+        {24,60.5,"Reena"}
+    };
+    char *string ;
+    fp = fopen("/home/sagar/Documents/hacking-/C language project /student.txt","w");
+    for (int i= 0; i < 3; i++){
+        fprintf(fp,"%d %f %s\n",emp[i].age,emp[i].percent,emp[i].name);
 
-    printf("\n Maths Mark...");
-    scanf("%d", &s[i].maths);
-
-    printf("\nPhysics Marks...");
-    scanf("%d",&s[i].phy);
-
-    printf("\n Chemistry Mark......");
-    scanf("%d", &s[i].chem);
-       s[i].cutoff =(s[i].maths/2.0)+(s[i].phy/4.0)+(s[i].chem/4.0);
-
-
- }
-// sort decending - cutoff
-for ( i = 0; i < n; i++)
-{
-    for ( j = i+1; j < n; j++)
-    {
-       if (s[i].cutoff < s[j].cutoff)
-       {
-           temp=s[i];
-           s[i]=s[j];
-           s[j]=temp;
-       }
-       
-        
     }
-        
-}
-  printf("\n\n rank name maths physics chemistry cuttoff\n");
-  for ( i = 0; i < n; i++)
-  {
-      s[i].name, s[i].maths, s[i].phy, s[i].chem, s[i].cutoff;
-
-  }
-  getchar();
-    
+    fclose(fp);
 }
