@@ -6,10 +6,7 @@ struct student {
     int id;
     char name[30];
     float percentage; // data
-};#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
+};
 struct student {
     int id;
     char name[30];
