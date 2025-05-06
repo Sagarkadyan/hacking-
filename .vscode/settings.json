@@ -1,4 +1,7 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
-    "python.pythonPath": "venv/bin/python3.13"
+    "python.pythonPath": "venv/bin/python3.13",
+    "files.associations": {
+        "cmath": "c"
+    }
 }
