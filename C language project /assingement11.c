@@ -8,7 +8,7 @@ struct stu
     int maths,phy,chem,rank;
     float cutoff;
 };
-void main()
+int main()
 {
  struct stu s[100],temp;
  int i,j,n;
@@ -50,7 +50,7 @@ for ( i = 0; i < n; i++)
   printf("\n\n rank name maths physics chemistry cuttoff\n");
   for ( i = 0; i < n; i++)
   {
-      s[i].name, s[i].maths, s[i].phy, s[i].chem, s[i].cutoff;
+      printf("s[i].name, s[i].maths, s[i].phy, s[i].chem, s[i].cutoff");
 
   }
   getchar();

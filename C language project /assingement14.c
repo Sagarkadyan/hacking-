@@ -5,7 +5,7 @@ void main()
    int c,pos;
    FILE *fpl;
    system("clear");
-   fpl=fopen("sudent.txt","r+");//the file has something to write in it
+   fpl=fopen("/home/sagar/Documents/hacking-/C language project /student.txt","r+");//the file has something to write in it
    printf("\nReading from the file ...\n");
    while(!feof(fpl))
    {
@@ -15,7 +15,7 @@ void main()
    } 
 rewind(fpl);//position the pointer to the begging of the file 
 c=fgetc(fpl);
-printf("\nThe  first cgaracter from the file : % c",c);
+printf("\nThe  first character from the file : % c",c);
 pos=ftell(fpl);//return th ecurrent position of the file pointer
 printf("\nThe position of the file pointer :%d",pos);
 fseek(fpl,10,SEEK_SET);//Moves the files pointer to the 10th byte  from the beginning

@@ -13,7 +13,7 @@ STEP8.If ch=5,perform modulation and print the results
 STEP9.If choice is not in them print"Enter correct choice"
 STEP10.Stop thr program execution
 PROGRAM*/
-  #include<stdio.h>
+ #include<stdio.h>
  void  main()
  {
  int a,b,c,ch;

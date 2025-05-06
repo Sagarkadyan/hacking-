@@ -1,26 +1,18 @@
 #include<stdio.h>
 void main()
 {
-int arr[10],i,n,sum=0;
-printf("\n enter the number of elements in the arry");
-// reading the size of the array
+int n,i,j;
+printf("\nEnter the limit:");
 scanf("%d",&n);
-printf("\n enter the values for the element of the array");
-for(i=0;i<n;i++);
+for (i=1;i <=n;i++)
 {
-   printf("\n enter the element %d",i+1);
-   scanf("%d",&arr[i]); 
-}
-for (i=0;i<n;i++);
+for (j=2;j<i;j++)
 {
-    sum=sum+arr[i];
-}
-printf("\n printing the array elements .....");
-printf("\n the values for the elements of the array");
-for (i=0;i<n;i++);
-{
-    printf("\n the elements %d :%d",i+1,arr[i]);
-}
-printf("\n printing the array sum ...");
-printf("%d",sum);  
+if(i%j==0)    
+break;
+}   
+if(i==j)
+printf("%d",i); 
+}    
+getchar();
 }
