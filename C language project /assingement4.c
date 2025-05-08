@@ -1,3 +1,8 @@
+
+
+AIM  To allow the user to input a list of integers, calculate their sum, and display both the integers and the sum. 
+
+
 #include<stdio.h>
 int main()
 {
@@ -24,3 +29,6 @@ for (i=0;i<n;i++)
 printf("\n printing the  sum of array ...");
 printf("%d",sum);  
 }
+
+
+OUTPUT:
