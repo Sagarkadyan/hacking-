@@ -16,7 +16,7 @@ Iis basically machine code in Human readable form
  CPU Feature
  
  
- 1.Register 
+1.Register 
      this is like a  temporary memory if you want to perform a task tehn data will come here and during thr task data
      will stay here and after  calculations the result will be save in permanent location   
      I is basicly a working memory
@@ -38,7 +38,8 @@ Iis basically machine code in Human readable form
    contigous array is an array which srore data in contiguos region(a region which is connedtes or adjacent to memory without gap) 
 
    pushing and popping are done through by moving an index or a pointer and this poime 
-   holds the  lacation of he top of stack and it is uptaded as  item are pushed into the stck        
+   holds the  location of he top of stack and it is uptaded as  item are pushed into the stock 
+   
 
      
 
