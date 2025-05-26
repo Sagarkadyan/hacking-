@@ -9,7 +9,7 @@ void bubbleSort(int arr[],int n){
          arr[j+1]=temp;
      } 
   }
-    
+   }  
 }
 int main(){
  int arr[]={2,6,1,5,3,4};
@@ -21,7 +21,8 @@ int main(){
  for(int i=0;i<n;i++) 
    printf("%d ",arr[i]);
  return 0;     
-}
+ }
+
 
 /*
 #include<stdio.h>

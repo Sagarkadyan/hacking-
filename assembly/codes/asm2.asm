@@ -10,6 +10,6 @@ _start:
   mov edx , len
   int  0x80
   mov eax,1
-  mov ebx,0
+  mov ebx,0//sidhumoosew
   int 0x80
 
