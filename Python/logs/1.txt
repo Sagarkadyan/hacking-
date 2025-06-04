@@ -1,0 +1,17 @@
+🕒 Time: 2025-05-26 22:35:35
+🔹 IP: 64:ff9b::14cf:4952
+
+🌍 Location Info
+City: N/A
+Region: N/A
+Country: N/A
+Postal Code: N/A
+Coordinates: N/A, N/A
+ISP/Org: N/A
+Timezone: N/A
+Google Maps: https://www.google.com/maps?q=N/A,N/A
+🔄 Reverse DNS
+Reverse DNS: Not available
+
+📄 WHOIS Info
+❌ WHOIS error: IPv6 address 64:ff9b::14cf:4952 is already defined as Reserved via RFC 4291.
