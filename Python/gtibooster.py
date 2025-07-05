@@ -69,3 +69,4 @@ else:
     bonus_count = random.randint(1, 5)
     print(f"Triggering bonus: making {bonus_count} extra commits!")
     make_commits(bonus_count, reason="Bonus")
+
