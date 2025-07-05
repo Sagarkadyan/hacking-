@@ -1,7 +1,7 @@
 import requests
 import json
 
-token = "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"  # Replace with your actual API key
+token = "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"  # Replace with your actual API key
 hello = input("Enter the text: ")
 
 response = requests.post(
