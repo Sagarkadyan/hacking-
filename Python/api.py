@@ -1,8 +1,10 @@
 import requests
 import json
 
-token = "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"  # Replace with your actual API key
-hello = input("Enter the text: ")
+token = "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"  # Replace with your actual API key
+hello = """
+ 
+"""
 
 response = requests.post(
     url="https://openrouter.ai/api/v1/chat/completions",
@@ -20,7 +22,7 @@ response = requests.post(
         ],
     })
 ).json()  # Parse JSON response directly
-
 # Extract and print ONLY the AI's response
+#print(response)
 ai_response = response['choices'][0]['message']['content']
 print(ai_response)  # Clean output (e.g., "The result of 2 + 2 is 4. 😊")

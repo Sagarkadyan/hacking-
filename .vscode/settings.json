@@ -1,7 +1,9 @@
 {
     "C_Cpp.errorSquiggles": "Disabled",
-    "python.pythonPath": "venv/bin/python3.13",
+    "python.pythonPath": "venv/bin/python",
     "files.associations": {
         "cmath": "c"
-    }
+    },
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true
 }
