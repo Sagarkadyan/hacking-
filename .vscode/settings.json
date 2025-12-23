@@ -2,8 +2,10 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "python.pythonPath": "venv/bin/python",
     "files.associations": {
-        "cmath": "c"
+        "cmath": "c",
+        "iostream": "cpp"
     },
     "python.linting.pylintEnabled": true,
-    "python.linting.enabled": true
+    "python.linting.enabled": true,
+    "git.ignoreLimitWarning": true
 }
