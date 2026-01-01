@@ -1,10 +1,8 @@
 import requests
 import json
-token = "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"  # Replace with your actual API key
 
-
-
- # replace with your actual key
+token = "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"  # Replace with your actual API key
+hello = input("Enter the text: ")
 
 # Load snippet safely from file
 with open("snippet.txt", "r", encoding="utf-8") as f:
@@ -77,4 +75,4 @@ def responsegen(pro):
         ai_response = response["choices"][0]["message"]["content"]
         print(ai_response)
 
-responsegen(prompt_cl)        
+responsegen(hello)
